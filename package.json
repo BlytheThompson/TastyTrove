@@ -1,0 +1,26 @@
+{
+  "name": "tastytrove",
+  "version": "0.0.1",
+  "description": "A online website to get any recipe you would like, share your own or find some of the greatest recipes known to man!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "TastyTrove"
+  },
+  "keywords": [
+    "Recipes",
+    "RecipeBox",
+    "Online",
+    "Recipes",
+    "Food",
+    "Tasty Food",
+    "TastyTrove",
+    "Tasty Trove",
+    "Trove Tasty"
+  ],
+  "author": "EazySolutions",
+  "license": "MIT"
+}
