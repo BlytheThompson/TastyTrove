@@ -2,7 +2,7 @@
   "name": "tastytrove",
   "version": "0.0.1",
   "description": "A online website to get any recipe you would like, share your own or find some of the greatest recipes known to man!",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
