@@ -1,4 +1,4 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const uri = 'mongodb+srv://eazyonlinesolutions:<SXrHLiO5Gf9feUr>@tastytrove.ecnc8pz.mongodb.net/?retryWrites=true&w=majority';
 
@@ -18,7 +18,7 @@ async function run() {
     await client.connect();
 
     // Access the recipes collection
-    const db = client.db('<your-database-name>');
+    const db = client.db('TastyTrove');
     const recipesCollection = db.collection('recipes');
 
     // Fetch recipes data from MongoDB
