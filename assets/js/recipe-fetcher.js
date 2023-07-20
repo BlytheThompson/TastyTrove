@@ -1,11 +1,33 @@
-// Fetch recipes data from the server
-fetch('https://api.example.com/recipes')
-  .then(response => response.json())
-  .then(data => {
+const { MongoClient } = require('mongodb');
+
+const uri = 'mongodb+srv://eazyonlinesolutions:<SXrHLiO5Gf9feUr>@tastytrove.ecnc8pz.mongodb.net/?retryWrites=true&w=majority';
+
+async function run() {
+  const client = new MongoClient(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverApi: {
+      version: ServerApiVersion.v1,
+      strict: true,
+      deprecationErrors: true,
+    }
+  });
+
+  try {
+    // Connect to MongoDB
+    await client.connect();
+
+    // Access the recipes collection
+    const db = client.db('<your-database-name>');
+    const recipesCollection = db.collection('recipes');
+
+    // Fetch recipes data from MongoDB
+    const recipes = await recipesCollection.find().toArray();
+
     // Generate recipe div elements based on the fetched data
     const recipesContainer = document.getElementById('recipes-container');
 
-    data.forEach(recipe => {
+    recipes.forEach(recipe => {
       const recipeDiv = document.createElement('div');
       recipeDiv.classList.add('recipe');
 
@@ -24,7 +46,15 @@ fetch('https://api.example.com/recipes')
 
       recipesContainer.appendChild(recipeDiv);
     });
-  })
-  .catch(error => {
+
+    console.log('Recipes fetched successfully!');
+  } catch (error) {
     console.log('Error fetching recipes:', error);
-  });
+  } finally {
+    // Close the MongoDB connection
+    await client.close();
+  }
+}
+
+run().catch(console.dir);
+

@@ -22,5 +22,9 @@
     "Trove Tasty"
   ],
   "author": "EazySolutions",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^5.7.0",
+    "mongosh": "^1.10.1"
+  }
 }
